@@ -3,14 +3,15 @@ alert("Bienvenido al mercado, primero necesito que crees una cuenta.");
 let usuario;
 let contraseña;
 
-usuario = prompt("ingrese un usuario");
 
+// Crer una cuenta
+usuario = prompt("ingrese un usuario");
 contraseña = prompt("ingrese una contraseña");
 
+//Inicio de sesion
 if (usuario != "") {
     if (contraseña != "") {
         console.log("Ingresaste los datos de registro correctamente.");
-
         console.log("Gracias por ingresar su usuario y contraseña.");
         console.log("Ahora ingrese a su cuenta, iniciando sesión.");
 
@@ -20,6 +21,7 @@ if (usuario != "") {
             if (contraseña == prompt("ingrese su contraseña")) {
                 console.log("El usuario y contraseña son correctos, bienvenido al mercado!");
 
+                //mercado
                 alert('Elige 2 o mas productos que deseas comprar y te diremos cuanto es el total...' + '\n' +
                     'Manzana: $50' + '\n' +
                     'Pollo: $450' + '\n' +
@@ -28,7 +30,7 @@ if (usuario != "") {
                     'Arroz: $90' + '\n' +
                     'Atun: $100' + '\n' +
                     'Papel: $110');
-
+                //productos
                 let manzana = 50;
                 let pollo = 450;
                 let pan = 100;
@@ -41,8 +43,7 @@ if (usuario != "") {
 
                 let totalProducto = Number(prompt("¿cuantos prductos deseas comprar?"));
 
-
-
+                
                 for (let i = 1; i <= totalProducto; i++) {
                     let producto = prompt('Ingrese su producto');
                     switch (producto) {
@@ -71,15 +72,8 @@ if (usuario != "") {
                             console.log('Ingresó un producto que no está registrado en la lista');
                     }
                 }
-
                 resultado = total
                 console.log('El total es de: ' + resultado);
-
-
-
-
-
-
             } else {
                 console.log("La es contraseña es incorrecta.");
             }
