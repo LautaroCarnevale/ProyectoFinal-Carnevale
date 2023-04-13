@@ -40,40 +40,48 @@ if (usuario != "") {
                 let papel = 110;
                 let total = 0;
                 let resultado = 0;
+                let seguirComprando;
+                let continuar = 's';
 
-                let totalProducto = Number(prompt("¿cuantos prductos deseas comprar?"));
+                while (seguirComprando != 'n') {
 
-                
-                for (let i = 1; i <= totalProducto; i++) {
-                    let producto = prompt('Ingrese su producto');
-                    switch (producto) {
-                        case 'manzana':
-                            total = total + manzana;
-                            break;
-                        case 'pollo':
-                            total = total + pollo;
-                            break;
-                        case 'pan':
-                            total = total + pan;
-                            break;
-                        case 'queso':
-                            total = total + queso;
-                            break;
-                        case 'arroz':
-                            total = total + arroz;
-                            break;
-                        case 'atun':
-                            total = total + atun;
-                            break;
-                        case 'papel':
-                            total = total + papel;
-                            break;
-                        default:
-                            console.log('Ingresó un producto que no está registrado en la lista');
+                    let totalProducto = Number(prompt("¿cuantos prductos deseas comprar?"));
+
+                    for (let i = 1; i <= totalProducto; i++) {
+                        let producto = prompt('Ingrese su producto');
+                        switch (producto) {
+                            case 'manzana':
+                                total = total + manzana;
+                                break;
+                            case 'pollo':
+                                total = total + pollo;
+                                break;
+                            case 'pan':
+                                total = total + pan;
+                                break;
+                            case 'queso':
+                                total = total + queso;
+                                break;
+                            case 'arroz':
+                                total = total + arroz;
+                                break;
+                            case 'atun':
+                                total = total + atun;
+                                break;
+                            case 'papel':
+                                total = total + papel;
+                                break;
+                            default:
+                                console.log('Ingresó un producto que no está registrado en la lista');
+                        }
                     }
+
+                    resultado = total
+                    console.log('El total es de: ' + resultado);
+
+                    seguirComprando = prompt('queres seguir comprando? s/n ');
+
                 }
-                resultado = total
-                console.log('El total es de: ' + resultado);
             } else {
                 console.log("La es contraseña es incorrecta.");
             }
