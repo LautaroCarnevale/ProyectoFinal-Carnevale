@@ -10,15 +10,13 @@ usuario = prompt("ingrese un usuario");
 if (usuario != "") {
     contraseña = prompt("ingrese una contraseña");
     if (contraseña != "") {
-        console.log("Ingresaste los datos de registro correctamente.");
-        console.log("Gracias por ingresar su usuario y contraseña.");
-        console.log("Ahora ingrese a su cuenta, iniciando sesión.");
+        alert('Ingresaste los datos de registro correctamente, ahora ingrese a su cuenta, iniciando sesión.');
 
         if (usuario == prompt("Ingrese su usuario")) {
-            console.log("Tu usuario es correcto, ahora ingresa la contraseña.");
+            alert("Tu usuario es correcto, ahora ingresa la contraseña.");
 
             if (contraseña == prompt("ingrese su contraseña")) {
-                console.log("El usuario y contraseña son correctos, bienvenido al mercado!");
+                alert("El usuario y contraseña son correctos, bienvenido al mercado!");
 
                 //mercado
                 alert('Elige productos que deseas comprar y te diremos cuanto es el total...' + '\n' +
@@ -53,7 +51,7 @@ if (usuario != "") {
                             'Queso: $150' + '\n' +
                             'Arroz: $90' + '\n' +
                             'Atun: $100' + '\n' +
-                            'Papel: $110');;
+                            'Papel: $110');
                             switch (producto) {
                                 case 'manzana':
                                     total = total + manzana;
@@ -78,27 +76,26 @@ if (usuario != "") {
                                     break;
                                 default:
     
-                                    console.log('Ingresó un producto que no está registrado en la lista');
+                                alert('Ingresó un producto que no está registrado en la lista');
                             }
                         } 
     
                         resultado = total
-                        console.log('El total es de: ' + resultado);
-                        seguirComprando = prompt('queres seguir comprando? s/n ');
-
+                        alert('El total es de: $' + resultado);
+                        seguirComprando = prompt('¿queres seguir comprando? s/n');
                     } else {
-                        console.log('Solo tenmos 7 productos diferentes')
+                        alert('Solo tenmos 7 productos diferentes')
                     }
                 }
             } else {
-                console.log("La es contraseña es incorrecta.");
+                alert("La es contraseña es incorrecta.");
             }
         } else {
-            console.log("El usuario es incorrecto.");
+            alert("El usuario es incorrecto.");
         }
     } else {
-        console.log("No ingresaste una contraseña, lamentablemente no vamos a poder registrarte.");
+        alert("No ingresaste una contraseña, lamentablemente no vamos a poder registrarte.");
     }
 } else {
-    console.log("No ingresaste un usuario, lamentablemente no vamos a poder registrarte.");
+    alert("No ingresaste un usuario, lamentablemente no vamos a poder registrarte.");
 }
