@@ -1,36 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-    <title>PreEntrega1+Carnevale</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>PreEntrega1+Carnevale</title>
 
-    <header>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+</head>
 
-    </header>
+<body>
+  <header>
+    <div class="tituloPuerto">
+      <h1 class="h1-titulo">Bienvenidos al puerto!!</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="body2">
+      <div class="titulo-Requisitos">
+        <h2 class="h2-nombrePuerto">
+          CoderDock - Centro de control de acceso y supervisión de carga:
+        </h2>
+        <button type="button" class="btn btn-primary" id="boton-Requisitos">Regisitos</button>
+      </div>
+
+      <div class="mb-3 camionesEnEspera">
+        <div class="esperaBotonesYSilos">
+          <div class="labelCamionesEspera grid1">
+            <label for="camionesEspera" class="form-label">Camiones en espera</label>
+            <select class="form-control" id="camionesEspera"></select>
+          </div>
+          <div class="divBoton-verificar grid2">
+            <button type="button" class="btn btn-primary" id="boton-verificar">Verificar camion</button>
+            <div class="consola-verificar" id="consola-verificar"></div>
+          </div>
+          <div class="divBoton-eliminar grid3">
+            <button type="button" class="btn btn-danger">Eliminar camion</button>
+            <div class="consola-eliminar" id="consola-eliminar"></div>
+          </div>
+          <div class="divBoton-undefined grid4">
+            <button type="button" class="btn btn-warning">undefined</button>
+            <div class="consola-undefined" id="consola-undefined"></div>
+          </div>
+          <div class="labelSilos grid5">
+            <h3 class="tituloSilos">Silos</h3>
+          </div>
 
 
-    <main>
+          <div class="silos grid6">
+            <div class="silos2">
+              <img
+                src="https://cdn.discordapp.com/attachments/814738071421452373/1105751833030447184/eHoDfiYofLa1_lWTO_ffY-transformed-fotor-bg-remover-202305104120.png"
+                style="width: 90px;" alt="silo1"> <!-- agregar las imagenes en un div como backgraund-img -->
+              <h4 class="textoSilos">Silo I</h3>
+            </div>
+          </div>
+          <div class="silos grid7">
+            <div class="silos2">
+              <img
+                src="https://cdn.discordapp.com/attachments/814738071421452373/1105751833030447184/eHoDfiYofLa1_lWTO_ffY-transformed-fotor-bg-remover-202305104120.png"
+                style="width: 90px;" alt="silo2"> <!-- agregar las imagenes en un div como backgraund-img -->
+              <h5 class="textoSilos">Silo II</h4>
+            </div>
+          </div>
+          <div class="silos grid8">
+            <div class="silos2">
+              <img
+                src="https://cdn.discordapp.com/attachments/814738071421452373/1105751833030447184/eHoDfiYofLa1_lWTO_ffY-transformed-fotor-bg-remover-202305104120.png"
+                style="width: 90px;" alt="silo3"> <!-- agregar las imagenes en un div como backgraund-img -->
+              <h6 class="textoSilos">Silo III</h5>
+            </div>
+          </div>
 
-    </main>
-    
+        </div>
+        <div class="registroCamiones">
 
-    <footer>
+          <label for="datosDeRegistro" class="titulo-RegistroDeCamiones">Datos de registro del camion:</label>
+          <div class="cuadradoDatosRegistro">
+            <p class="p-datosDeResistros" id="datosDeRegistro"></p>
+          </div>
+        </div>
+      </div>
+      <div class="botonesCalificadores">
+        <div class="botonesCalificadores-hijo">
+          <button type="button" class="btn btn-danger">Denegar</button>
+          <button type="button" class="btn btn-success">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </main>
 
-    </footer>
+  <footer></footer>
 
+  <!-- Bootstrap -->
+  <script src="puerto.js"></script>
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
 
-
-    <!-- Bootstrap -->
-    <script src="puerto.js"></script>
-    <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  </body>
 </html>

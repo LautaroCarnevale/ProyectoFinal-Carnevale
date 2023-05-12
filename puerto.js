@@ -1,17 +1,17 @@
-class camion {
+class Camion {
     id;
     fecha;
-    nombreCompleto;
+    identificacion = { nombre: "", apellido: "", dni: "", nacionalidad: "", sexo: "" };
     modelo;
     patente;
     carga;
     peso;
 
-    constructor (id,fecha,nombreCompleto,modelo,patente,carga,peso) {
+    constructor (id,fecha,identificacion,modelo,patente,carga,peso) {
         this.id = id;
         this.fecha = fecha;
-        this.nombreCompleto = nombreCompleto;
-        this.modelo  = modelo;
+        this.identificacion = identificacion;
+        this.marca  = modelo;
         this.patente = patente;
         this.carga = carga;
         this.peso = peso;

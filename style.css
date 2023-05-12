@@ -1,0 +1,244 @@
+body {
+    background-image: url(https://cdn.discordapp.com/attachments/814738071421452373/1105665285777788958/camiones-gran-rosario_1.jpg);
+
+}
+
+.tituloPuerto{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 40px;    
+}
+
+.h1-titulo {
+    font-size: 50px;
+    color: #000;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.body2 {
+    background-color: white;
+    margin-top: 90px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 90px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titulo-Requisitos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.h2-nombrePuerto{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.camionesEnEspera{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.esperaBotonesYSilos{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    grid-auto-rows: minmax(auto, auto);
+}
+
+.grid1{
+    grid-column: 1/4;
+}
+
+.grid5 {
+   grid-column: 1/4;
+}
+
+
+.labelCamionesEspera{
+    height: 100px;
+}
+
+.divBoton-verificar{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divBoton-eliminar{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divBoton-undefined{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.labelSilos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+
+.consola-verificar{
+    width: 100%;
+    height: min-content;
+    border-style: solid;
+    border-color: 1px #000;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.consola-eliminar{
+    width: 100%;
+    height: min-content;
+    border-style: solid;
+    border-color: 1px #000;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.consola-undefined{
+    width: 100%;
+    height: min-content;
+    border-style: solid;
+    border-color: 1px #000;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.tituloSilos{   
+    width: 200px;
+    border-style: solid;
+    border-color: 1px #000;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.silos{
+    display: flex;
+    justify-content: center;
+}
+
+.textoSilos{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+/* .textoSilo1{
+    
+}
+.textoSilo2{
+    
+}
+.textoSilo3{
+    
+} */
+
+.registroCamiones{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.titulo-RegistroDeCamiones {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    text-shadow: 1px 1px 1px #ccc;
+  }
+
+.cuadradoDatosRegistro{
+    margin-top: 10px;
+    width: 400px;
+    height: max-content;
+    border-radius: 5px;
+}
+
+
+.botonesCalificadores{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* p de html */
+.p-datosDeResistros{
+margin: 0;
+padding: 0;
+}
+
+.datos-de-registro {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+  }
+  
+  .datos-de-registro p {
+    margin: 5px;
+    font-weight: bold;
+  }
+  
+  .datos-de-registro hr {
+    margin: 0;
+    border-top: 1px solid #000;
+  }
+  
+  /* Estilos para los nombres de los campos */
+  .datos-de-registro-nombre {
+    color: #999;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Estilos para los valores de los campos */
+  .datos-de-registro-valor {
+    color: #000;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+  }
+
+
+
+
+
+
+
