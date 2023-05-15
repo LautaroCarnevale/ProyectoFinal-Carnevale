@@ -1,5 +1,5 @@
 class Camion {
-    id;
+    idunico;
     fecha;
     identificacion = { nombre: "", apellido: "", dni: "", nacionalidad: "", sexo: "" };
     modelo;
@@ -7,8 +7,8 @@ class Camion {
     carga;
     peso;
 
-    constructor (id,fecha,identificacion,modelo,patente,carga,peso) {
-        this.id = id;
+    constructor (idunico,fecha,identificacion,modelo,patente,carga,peso) {
+        this.idunico = idunico;
         this.fecha = fecha;
         this.identificacion = identificacion;
         this.marca  = modelo;
