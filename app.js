@@ -1,14 +1,23 @@
+//ya se que esto no es parte de las condiciones de lo que piden pero queda lindo.
+// function alerRol() {
+//     swal({
+//         title: 'Se han detectado camiones adicionales esperando en nuestra área de acceso',
+//         icon: 'warning',
+//     });
+// }
+// alerRol();
+
+
 let camiones = [];
 const selectorCamiones = document.querySelector('#camionesEspera')
 
-camiones.push(new Camion(1, "11/05/2023", { nombre: "Jhon", apellido: "Martinez", dni: "43.657.332", nacionalidad: "Argentina", sexo: "M" }, "scania", "DEF-7567", "soja", "27500"));
-camiones.push(new Camion(2, "11/05/2023", { nombre: "Juan", apellido: "González", dni: "23.584.672", nacionalidad: "Peru", sexo: "M", }, "Mercedes-Benz", "HSA-8427", "maiz", "39300"));
-camiones.push(new Camion(3, "11/05/2023", { nombre: "Miguel", apellido: "Torres", dni: "83.321.484", nacionalidad: "Argentina", sexo: "M" }, "Volvo", "ASD-3298", "sorgo", "28990"));
-camiones.push(new Camion(4, "11/05/2023", { nombre: "Luis", apellido: "Hernandez", dni: "22.785.652", nacionalidad: "Argentina", sexo: "M" }, "Iveco", "DGA-1778", "soja", "25785"));
-camiones.push(new Camion(5, "11/05/2023", { nombre: "Sofia", apellido: "Martinez", dni: "32.483.874", nacionalidad: "Argentina", sexo: "F" }, "scania", "KSF-9032", "soja", "30173"));
-camiones.push(new Camion(6, "11/05/2023", { nombre: "Maria", apellido: "Rodriguez", dni: "39.634.332", nacionalidad: "Argentina", sexo: "F" }, "Iveco", "HJE-4890", "maiz", "27900"));
-camiones.push(new Camion(7, "11/05/2023", { nombre: "Carlos", apellido: "Ramirez", dni: "13.237.234", nacionalidad: "Argentina", sexo: "M" }, "Mercedes-Benz", "JER-2783", "sorgo", "31360"));
-
+camiones.push(new Camion(1, "11/05/2023", { nombre: "Jhon", apellido: "Martinez", dni: "43.657.332", nacionalidad: "Argentina", sexo: "M" }, "scania", "DEF-7567", "soja", 27500));
+camiones.push(new Camion(2, "11/05/2023", { nombre: "Juan", apellido: "González", dni: "23.584.672", nacionalidad: "Peru", sexo: "M", }, "Mercedes-Benz", "HSA-8427", "maiz", 39300));
+camiones.push(new Camion(3, "11/05/2023", { nombre: "Miguel", apellido: "Torres", dni: "83.321.484", nacionalidad: "Argentina", sexo: "M" }, "Volvo", "ASD-3298", "sorgo", 28990));
+camiones.push(new Camion(4, "11/05/2023", { nombre: "Luis", apellido: "Hernandez", dni: "22.785.652", nacionalidad: "Argentina", sexo: "M" }, "Iveco", "DGA-1778", "soja", 25785));
+camiones.push(new Camion(5, "11/05/2023", { nombre: "Sofia", apellido: "Martinez", dni: "32.483.874", nacionalidad: "Argentina", sexo: "F" }, "scania", "KSF-9032", "soja", 30173));
+camiones.push(new Camion(6, "11/05/2023", { nombre: "Maria", apellido: "Rodriguez", dni: "39.634.332", nacionalidad: "Argentina", sexo: "F" }, "Iveco", "HJE-4890", "maiz", 27900));
+camiones.push(new Camion(7, "11/05/2023", { nombre: "Carlos", apellido: "Ramirez", dni: "13.237.234", nacionalidad: "Argentina", sexo: "M" }, "Mercedes-Benz", "JER-2783", "sorgo", 31360));
 
 
 localStorage.setItem('camiones', JSON.stringify(camiones));
@@ -24,10 +33,9 @@ function popularDropDown() {
         option.textContent = `camion ${Camion.idunico}: Nombre Completo: ${Camion.identificacion.nombre} ${Camion.identificacion.apellido}, Carga: ${Camion.carga}...`
         option.value = camiones.indexOf(Camion);
         selectorCamiones.appendChild(option);
-        mostrarDatosDeCamion();
     })
+    mostrarDatosDeCamion();
 }
-
 
 selectorCamiones.addEventListener('change', mostrarDatosDeCamion);
 
@@ -48,7 +56,7 @@ function mostrarDatosDeCamion() {
   <p><span class="datos-de-registro-nombre">Marca del camión:</span> <span class="datos-de-registro-valor">${datosCamion.marca}</span></p>
   <p><span class="datos-de-registro-nombre">Patente: </span><span class="datos-de-registro-valor">${datosCamion.patente}</span></p>
   <p><span class="datos-de-registro-nombre">Cereal: </span><span class="datos-de-registro-valor">${datosCamion.carga}</span></p>
-  <p><span class="datos-de-registro-nombre">Peso: </span><span class="datos-de-registro-valor">${datosCamion.peso}</span></p>
+  <p><span class="datos-de-registro-nombre">Peso: </span><span class="datos-de-registro-valor">${datosCamion.peso}Kg</span></p>
 </div>`;
 }
 
@@ -82,99 +90,52 @@ botonVerificar.addEventListener('click', () => {
 
     if (verificarDatosDeConsola) {
         consolaVerificar.innerHTML = `✅| Todo esta en orden`;
+        setTimeout(function() {
+            consolaVerificar.innerHTML = "";
+          }, 2000);
     } else {
         consolaVerificar.innerHTML = mensajesDeError.join(`<br>`);
     }
 });
 
+
+
+
+
 function deleteItemlocal() {
     //saca el dato que este en el select
-    let miSelect = document.getElementById('camionesEspera'); //creo que tengo que ver los eventos del select
-
-    miSelect.addEventListener('change', () => {
-        let todosLosCamiones = JSON.parse(localStorage.getItem('camiones'));
-        let valorSeleccionado = miSelect.value;
-        let camionAEliminar = todosLosCamiones.find(camion => camion.miSelect === valorSeleccionado);
-        let indice = todosLosCamiones.indexOf(camionAEliminar);
-        if (indice !== -1) {
-          todosLosCamiones.splice(indice, 1);
-          localStorage.setItem('camiones', JSON.stringify(todosLosCamiones));
-        }
-        alert('bien')
-    });
+    let miSelect = document.getElementById("camionesEspera");
+    let todosLosCamiones = JSON.parse(localStorage.getItem("camiones"));
+    let valorSeleccionado = parseInt(miSelect.value) + 1;
+    todosLosCamiones = todosLosCamiones.filter((camion) => camion.idunico !== valorSeleccionado);
+    localStorage.setItem("camiones", JSON.stringify(todosLosCamiones));
 }
+
+
+function removeDropDown() {
+    const indiceSeleccionado = selectorCamiones.selectedIndex;
+    selectorCamiones.options[indiceSeleccionado].remove();
+}
+
+
 
 const botonEliminar = document.getElementById('boton-eliminar');
 
 botonEliminar.addEventListener('click', () => {
     deleteItemlocal();
+    removeDropDown();
+    const consolaEliminar = document.getElementById('consola-eliminar');
+    consolaEliminar.innerHTML = '✅| Se elimino correctamente el camion de la lista de espera.';
+    setTimeout(function() {
+        consolaEliminar.innerHTML = "";
+      }, 2000);
+
 });
 
 
 
 
 
-
-
-
-
-// function eliminarCamion() {
-//     //recuperar array del localsotrage
-//     let miSelect = document.getElementById('camionesEspera');
-//     let todosLosCamiones = JSON.parse(localStorage.getItem('camiones'));
-
-//     todosLosCamiones.
-// }
-
-
-
-
-
-
-// Obtener el en una constante el id de camion(oseal el nombre id del array) que este sinedo seleccionado en el select.
-// const numerDeCamion = selectorCamiones.value;
-// const verficarDatosCamion = camiones[numerDeCamion];
-// camiones = JSON.parse(localStorage.getItem('camiones'));
-// camiones.splice(selectorCamiones, 1)
-// })
-// localStorage.setItem("camiones", JSON.stringify(camiones))
-// newDropDown();
-
-
-// function newDropDown() {
-//     camiones.forEach((Camion) => {
-//         const option = document.createElement('option');
-//         option.textContent = `No hay camiones para registrar`
-//         option.value = camiones.indexOf(Camion);
-//         newmostrarDatosDeCamion();
-//     })
-// }
-
-
-
-
-
-
-// function newmostrarDatosDeCamion() {
-//     const numerDeCamion = selectorCamiones.value;
-//     const datosCamion = camiones[numerDeCamion];
-//     datosDeRegistro.innerHTML = `<div class="datos-de-registro">
-//   <p><span class="datos-de-registro-nombre">ID ÚNICO POR CAMIÓN:</span> <span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Fecha de ingreso:</span> <span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Datos del Chofer:</span> <span class="datos-de-registro-valor">No hay datos</span></p>
-//   <hr>
-//   <p><span class="datos-de-registro-nombre">Nombre:</span> <span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Apellido:</span> <span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Dni:</span> <span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Nacionalidad:</span> <span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Sexo: </span><span class="datos-de-registro-valor">No hay datos</span></p>
-//   <hr>
-//   <p><span class="datos-de-registro-nombre">Marca del camión:</span> <span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Patente: </span><span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Cereal: </span><span class="datos-de-registro-valor">No hay datos</span></p>
-//   <p><span class="datos-de-registro-nombre">Peso: </span><span class="datos-de-registro-valor">No hay datos</span></p>
-// </div>`;
-// }
 
 
 

@@ -4,11 +4,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <title>PreEntrega1+Carnevale</title>
+  
+  <title>PreEntrega3+Carnevale</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -46,8 +48,8 @@
             <div class="consola-eliminar" id="consola-eliminar"></div>
           </div>
           <div class="divBoton-undefined grid4">
-            <button type="button" class="btn btn-warning">undefined</button>
-            <div class="consola-undefined" id="consola-undefined"></div>
+            <button type="button" class="btn btn-warning" id="boton-descargar">Descargar camiones</button>
+            <div class="consola-undefined" id="consola-descargar"></div>
           </div>
           <div class="labelSilos grid5">
             <h3 class="tituloSilos">Silos</h3>
@@ -59,7 +61,7 @@
               <img
                 src="https://cdn.discordapp.com/attachments/814738071421452373/1105751833030447184/eHoDfiYofLa1_lWTO_ffY-transformed-fotor-bg-remover-202305104120.png"
                 style="width: 90px;" alt="silo1"> <!-- agregar las imagenes en un div como backgraund-img -->
-              <h4 class="textoSilos">Silo I</h3>
+              <h4 class="textoSilos">Silo I(soja)<br> <span id="cargaSiloSoja">0</span>/90000kg</h4>
             </div>
           </div>
           <div class="silos grid7">
@@ -67,7 +69,7 @@
               <img
                 src="https://cdn.discordapp.com/attachments/814738071421452373/1105751833030447184/eHoDfiYofLa1_lWTO_ffY-transformed-fotor-bg-remover-202305104120.png"
                 style="width: 90px;" alt="silo2"> <!-- agregar las imagenes en un div como backgraund-img -->
-              <h5 class="textoSilos">Silo II</h4>
+                <h5 class="textoSilos">Silo II(maiz)<br> <span id="cargaSiloMaiz">0</span>/90000kg</h6>
             </div>
           </div>
           <div class="silos grid8">
@@ -75,7 +77,7 @@
               <img
                 src="https://cdn.discordapp.com/attachments/814738071421452373/1105751833030447184/eHoDfiYofLa1_lWTO_ffY-transformed-fotor-bg-remover-202305104120.png"
                 style="width: 90px;" alt="silo3"> <!-- agregar las imagenes en un div como backgraund-img -->
-              <h6 class="textoSilos">Silo III</h5>
+                <h6 class="textoSilos">Silo III(sorgo)<br> <span id="cargaSiloSorgo">0</span>/90000kg</h6>
             </div>
           </div>
 
@@ -97,14 +99,18 @@
     </div>
   </main>
 
-  <footer></footer>
+  <footer>
+
+  </footer>
 
   <!-- Bootstrap -->
   <script src="puerto.js"></script>
   <script src="app.js"></script>
+  <script src="silos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>
