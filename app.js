@@ -1,23 +1,35 @@
 //ya se que esto no es parte de las condiciones de lo que piden pero queda lindo.
-// function alerRol() {
-//     swal({
-//         title: 'Se han detectado camiones adicionales esperando en nuestra área de acceso',
-//         icon: 'warning',
-//     });
-// }
-// alerRol();
+alert('Hola, lo que encontrarás aquí es una simulación de un control de acceso en un puerto. Tu tarea consistirá en verificar los camiones, eliminando aquellos que no cumplan con los requisitos establecidos (que se detallarán en el proyecto final como un boton). También tendrás la opción de autorizar su descarga en caso de ser necesario, recuerda que los silos tienen un limite')
+function alerRol() {
+    swal({
+        title: 'Se ha detectado la presencia de camiones adicionales esperando en nuestra área de acceso. Por favor, ve y ayúdalos a obtener acceso.',
+        icon: 'warning',
+    });
+}
+alerRol();
 
 
+//puseha los camiones a un array y de ahi los manda al localSotrage
 let camiones = [];
-const selectorCamiones = document.querySelector('#camionesEspera')
 
-camiones.push(new Camion(1, "11/05/2023", { nombre: "Jhon", apellido: "Martinez", dni: "43.657.332", nacionalidad: "Argentina", sexo: "M" }, "scania", "DEF-7567", "soja", 27500));
-camiones.push(new Camion(2, "11/05/2023", { nombre: "Juan", apellido: "González", dni: "23.584.672", nacionalidad: "Peru", sexo: "M", }, "Mercedes-Benz", "HSA-8427", "maiz", 39300));
-camiones.push(new Camion(3, "11/05/2023", { nombre: "Miguel", apellido: "Torres", dni: "83.321.484", nacionalidad: "Argentina", sexo: "M" }, "Volvo", "ASD-3298", "sorgo", 28990));
-camiones.push(new Camion(4, "11/05/2023", { nombre: "Luis", apellido: "Hernandez", dni: "22.785.652", nacionalidad: "Argentina", sexo: "M" }, "Iveco", "DGA-1778", "soja", 25785));
-camiones.push(new Camion(5, "11/05/2023", { nombre: "Sofia", apellido: "Martinez", dni: "32.483.874", nacionalidad: "Argentina", sexo: "F" }, "scania", "KSF-9032", "soja", 30173));
-camiones.push(new Camion(6, "11/05/2023", { nombre: "Maria", apellido: "Rodriguez", dni: "39.634.332", nacionalidad: "Argentina", sexo: "F" }, "Iveco", "HJE-4890", "maiz", 27900));
-camiones.push(new Camion(7, "11/05/2023", { nombre: "Carlos", apellido: "Ramirez", dni: "13.237.234", nacionalidad: "Argentina", sexo: "M" }, "Mercedes-Benz", "JER-2783", "sorgo", 31360));
+const selectorCamiones = document.querySelector('#camionesEspera')
+camiones.push(new Camion(1, "22/05/2023", { nombre: "Jhon", apellido: "Martinez", dni: "43.657.332", nacionalidad: "Argentina", sexo: "M" }, "scania", "DEF-7567", "soja", 27500));
+camiones.push(new Camion(2, "22/05/2023", { nombre: "Juan", apellido: "González", dni: "23.584.672", nacionalidad: "Peru", sexo: "M", }, "Mercedes-Benz", "HSA-8427", "maiz", 39300));
+camiones.push(new Camion(3, "22/05/2023", { nombre: "Miguel", apellido: "Torres", dni: "83.321.484", nacionalidad: "Argentina", sexo: "M" }, "Volvo", "ASD-3298", "sorgo", 28990));
+camiones.push(new Camion(4, "22/05/2023", { nombre: "Luis", apellido: "Hernandez", dni: "22.785.652", nacionalidad: "Argentina", sexo: "M" }, "Iveco", "DGA-1778", "soja", 25785));
+camiones.push(new Camion(5, "22/05/2023", { nombre: "Sofia", apellido: "Martinez", dni: "32.483.874", nacionalidad: "Argentina", sexo: "F" }, "scania", "KSF-9032", "soja", 30173));
+camiones.push(new Camion(6, "22/05/2023", { nombre: "Maria", apellido: "Rodriguez", dni: "39.634.332", nacionalidad: "Argentina", sexo: "F" }, "Iveco", "HJE-4890", "maiz", 27900));
+camiones.push(new Camion(7, "22/05/2023", { nombre: "Carlos", apellido: "Ramirez", dni: "13.237.234", nacionalidad: "Argentina", sexo: "M" }, "Mercedes-Benz", "JER-2783", "sorgo", 31360));
+
+
+camiones.push(new Camion(8, "22/05/2023", { nombre: "Alejandro", apellido: "Lopez", dni: "43.232.742", nacionalidad: "Argentina", sexo: "M" }, "Mercedes-Benz", "DHR-4626", "sorgo", 20360));
+camiones.push(new Camion(9, "22/05/2023", { nombre: "Santiago", apellido: "Castro", dni: "64.732.723", nacionalidad: "Argentina", sexo: "M" }, "Iveco", "SAH-6323", "maiz", 25660));
+camiones.push(new Camion(10, "22/05/2023", { nombre: "Valentina", apellido: "Martinez", dni: "76.352.733", nacionalidad: "Argentina", sexo: "F" }, "Iveco", "GWH-5257", "soja", 27790));
+camiones.push(new Camion(11, "22/05/2023", { nombre: "Gabriel", apellido: "Sanchez", dni: "35.853.754", nacionalidad: "Aregentina", sexo: "M" }, "Volvo", "AGS-2746", "soja", 29060));
+camiones.push(new Camion(12, "22/05/2023", { nombre: "Camila", apellido: "Fernandez", dni: "56.341.451", nacionalidad: "Brasil", sexo: "F" }, "Volvo", "JSE-7522", "maiz", 28860));
+
+
+
 
 
 localStorage.setItem('camiones', JSON.stringify(camiones));
@@ -27,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     popularDropDown();
 });
 
+
+//manda los datos de los camiones a un DropDown
 function popularDropDown() {
     camiones.forEach((Camion) => {
         const option = document.createElement('option');
@@ -39,6 +53,7 @@ function popularDropDown() {
 
 selectorCamiones.addEventListener('change', mostrarDatosDeCamion);
 
+//muestra los datos del camion en el html
 function mostrarDatosDeCamion() {
     const numerDeCamion = selectorCamiones.value;
     const datosCamion = camiones[numerDeCamion];
@@ -56,13 +71,15 @@ function mostrarDatosDeCamion() {
   <p><span class="datos-de-registro-nombre">Marca del camión:</span> <span class="datos-de-registro-valor">${datosCamion.marca}</span></p>
   <p><span class="datos-de-registro-nombre">Patente: </span><span class="datos-de-registro-valor">${datosCamion.patente}</span></p>
   <p><span class="datos-de-registro-nombre">Cereal: </span><span class="datos-de-registro-valor">${datosCamion.carga}</span></p>
-  <p><span class="datos-de-registro-nombre">Peso: </span><span class="datos-de-registro-valor">${datosCamion.peso}Kg</span></p>
+  <p><span class="datos-de-registro-nombre">Peso: </span><span class="datos-de-registro-valor datos-de-registro-peso">${datosCamion.peso}Kg</span></p>
 </div>`;
 }
 
 
+//boton de verificar
 const botonVerificar = document.getElementById('boton-verificar')
 
+// escucha los click del boton verificar y si le da click verifica que los camiones sean correctos.
 botonVerificar.addEventListener('click', () => {
     const numerDeCamion = selectorCamiones.value;
     const verficarDatosCamion = camiones[numerDeCamion];
@@ -89,7 +106,7 @@ botonVerificar.addEventListener('click', () => {
     verificarPeso();
 
     if (verificarDatosDeConsola) {
-        consolaVerificar.innerHTML = `✅| Todo esta en orden`;
+        consolaVerificar.innerHTML = `✅| Todo está en orden`;
         setTimeout(function() {
             consolaVerificar.innerHTML = "";
           }, 2000);
@@ -101,9 +118,8 @@ botonVerificar.addEventListener('click', () => {
 
 
 
-
+// "borra" del localSotrage al la seleccion que este en ese momento en el select 
 function deleteItemlocal() {
-    //saca el dato que este en el select
     let miSelect = document.getElementById("camionesEspera");
     let todosLosCamiones = JSON.parse(localStorage.getItem("camiones"));
     let valorSeleccionado = parseInt(miSelect.value) + 1;
@@ -111,24 +127,24 @@ function deleteItemlocal() {
     localStorage.setItem("camiones", JSON.stringify(todosLosCamiones));
 }
 
-
+// saca del html la selecion que este en el select en ese momento
 function removeDropDown() {
     const indiceSeleccionado = selectorCamiones.selectedIndex;
     selectorCamiones.options[indiceSeleccionado].remove();
 }
 
 
-
+//boton para ejecutar la eliminaciones del localSotrage y del html
 const botonEliminar = document.getElementById('boton-eliminar');
 
 botonEliminar.addEventListener('click', () => {
     deleteItemlocal();
     removeDropDown();
     const consolaEliminar = document.getElementById('consola-eliminar');
-    consolaEliminar.innerHTML = '✅| Se elimino correctamente el camion de la lista de espera.';
+    consolaEliminar.innerHTML = '✅| Se eliminó correctamente el camión de la lista de espera.';
     setTimeout(function() {
         consolaEliminar.innerHTML = "";
-      }, 2000);
+      }, 3500);
 
 });
 

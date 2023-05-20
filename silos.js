@@ -1,35 +1,17 @@
 
-let todoOk = true;
 
+let todoOk = true;
 let siloSoja = [];
 let siloMaiz = [];
 let siloSorgo = [];
 let sumaSoja = 0;
 let sumaMaiz = 0;
 let sumaSorgo = 0;
+
 const selectorCamiones2 = document.querySelector('#camionesEspera')
 
-function obtenerDatosDelPeso() {
-    let miSelect = document.getElementById("camionesEspera");
-    let todosLosCamiones = JSON.parse(localStorage.getItem("camiones"));
-    let valorSeleccionado = parseInt(miSelect.value);
-    const verficarDatosCamion = camiones[valorSeleccionado];
-    console.log(verficarDatosCamion.peso)
-}
 
-function obtenerDatosDeLaCarga() {
-    let miSelect = document.getElementById("camionesEspera");
-    let todosLosCamiones = JSON.parse(localStorage.getItem("camiones"));
-    let valorSeleccionado = parseInt(miSelect.value);
-    const verficarDatosCamion = camiones[valorSeleccionado];
-    console.log(verficarDatosCamion.carga)
-}
-
-function removePeso() {
-
-}
-
-
+// elimina los datos del peso del localSotrage
 function elimiarDatosDelPeso() {
     // Obtiene el valor seleccionado del select
     let miSelect = document.getElementById("camionesEspera");
@@ -42,68 +24,89 @@ function elimiarDatosDelPeso() {
         }
     });
     localStorage.setItem("camiones", JSON.stringify(todosLosCamiones));
-    agregarDatosASilos();
-    mostrarConsolaDescargar();
     removePeso();
 }
 
-
+//obtiene los datos del select le saca el peso verifica que no supere al silo y lo muestra
 function agregarDatosASilos() {
     let miSelect = document.getElementById("camionesEspera");
     let valorSeleccionado = parseInt(miSelect.value);
     const verficarDatosCamion = camiones[valorSeleccionado];
 
+    if (verficarDatosCamion.carga == 'soja') {
+        const limiteRestante = 90000 - sumaSoja;
+        if (verficarDatosCamion.peso <= limiteRestante) {
+            siloSoja.push(verficarDatosCamion.peso);
 
-    if (verficarDatosCamion.carga == 'soja' && siloSoja < 90000) {
-        siloSoja.push(verficarDatosCamion.peso);
+            sumaSoja = 0;
+            for (let i = 0; i < siloSoja.length; i++) {
+                sumaSoja += siloSoja[i];
+            }
 
-        for (let i = 0; i < siloSoja.length; i++) {
-            sumaSoja += siloSoja[i];
+            cargaSiloSoja.innerHTML = sumaSoja;
+            elimiarDatosDelPeso();
+            todoOk = true;
+        } else {
+            todoOk = false;
         }
-        
-        cargaSiloSoja.innerHTML = (sumaSoja);
+    } else if (verficarDatosCamion.carga == 'maiz') {
+        const limiteRestante = 90000 - sumaMaiz;
+        if (verficarDatosCamion.peso <= limiteRestante) {
+            siloMaiz.push(verficarDatosCamion.peso);
 
-    } else if (verficarDatosCamion.carga == 'maiz' && siloMaiz < 90000) {
-        siloMaiz.push(verficarDatosCamion.peso);
+            sumaMaiz = 0;
+            for (let i = 0; i < siloMaiz.length; i++) {
+                sumaMaiz += siloMaiz[i];
+            }
 
-        for (let i = 0; i < siloMaiz.length; i++) {
-            sumaMaiz += siloMaiz[i];
+            cargaSiloMaiz.innerHTML = sumaMaiz;
+            elimiarDatosDelPeso();
+            todoOk = true;
+        } else {
+            todoOk = false;
         }
+    } else if (verficarDatosCamion.carga == 'sorgo') {
+        const limiteRestante = 90000 - sumaSorgo;
+        if (verficarDatosCamion.peso <= limiteRestante) {
+            siloSorgo.push(verficarDatosCamion.peso);
 
-        cargaSiloMaiz.innerHTML = (sumaMaiz);
+            sumaSorgo = 0;
+            for (let i = 0; i < siloSorgo.length; i++) {
+                sumaSorgo += siloSorgo[i];
+            }
 
-    } else if (verficarDatosCamion.carga == 'sorgo' && siloSorgo < 90000) {
-        siloSorgo.push(verficarDatosCamion.peso);
-
-        for (let i = 0; i < siloSorgo.length; i++) {
-            sumaSorgo += siloSorgo[i];
+            cargaSiloSorgo.innerHTML = sumaSorgo;
+            elimiarDatosDelPeso();
+            todoOk = true;
+        } else {
+            todoOk = false;
         }
-
-        cargaSiloSorgo.innerHTML = (sumaSorgo);
     } else {
         todoOk = false;
     }
 }
 
-
+//Muestra en la consola(del html) si todo fue correcto o no
 function mostrarConsolaDescargar() {
     const consolaDescargar = document.getElementById('consola-descargar')
     if (todoOk) {
-        consolaDescargar.innerHTML = ('✅| Camion descargado correctamente')
-        setTimeout(function() {
+        consolaDescargar.innerHTML = ('✅| Camión descargado correctamente')
+        setTimeout(function () {
             consolaDescargar.innerHTML = "";
-          }, 2000);
+        }, 2000);
     } else {
-        consolaDescargar.innerHTML = ('X| algo paso che')
+        consolaDescargar.innerHTML = ('❌ | El silo está lleno, rechaza al camión.')
+        setTimeout(function () {
+            consolaDescargar.innerHTML = "";
+        }, 2500);
     }
 
 }
 
-
-
+//llamar al boton
 const botonDescargar = document.getElementById('boton-descargar')
-
 botonDescargar.addEventListener('click', () => {
-    elimiarDatosDelPeso();
+    agregarDatosASilos();
+    mostrarConsolaDescargar();
 });
 
