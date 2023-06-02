@@ -13,18 +13,10 @@ const selectorCamiones2 = document.querySelector('#camionesEspera')
 
 // elimina los datos del peso del localSotrage
 function elimiarDatosDelPeso() {
-    // Obtiene el valor seleccionado del select
-    let miSelect = document.getElementById("camionesEspera");
-    let valorSeleccionado = parseInt(miSelect.value) + 1;
-    let todosLosCamiones = JSON.parse(localStorage.getItem("camiones"));
-
-    todosLosCamiones.forEach((camion) => {
-        if (camion.idunico === valorSeleccionado) {
-            camion.peso = 0;
-        }
-    });
-    localStorage.setItem("camiones", JSON.stringify(todosLosCamiones));
-    removePeso();
+    const indiceSeleccionado = selectorCamiones.selectedIndex;
+    const camionSeleccionado = camiones[indiceSeleccionado];
+    camionSeleccionado.peso = 0;
+    mostrarDatosDeCamion();
 }
 
 //obtiene los datos del select le saca el peso verifica que no supere al silo y lo muestra

@@ -1,6 +1,5 @@
-
-3. hacer que se actualize la tabla de datos de registro al momento de cambiarle los valores al camion, ejm: cuando lo descargas al camion que aparesca en 0.
-5. hacer los botones de acpetar y denegar camion(proyecto final).
-6. hacer el boton de requisitos(proyecto final).
-7. hacer que si acepta un camion en mal estado lo reten(proyecto final), ademas de que se verifiquen los datos y que de ahi pueda determinar si acepto bien a un camion o no.
-8. que se vayan rellenando los camiones dependiendo la cantidad de cereal que tiene(si puedo lo hago). 
+1. hacer que se actualize la tabla de datos de registro al momento de cambiarle los valores al camion, ejm: cuando lo descargas al camion que aparesca en 0.
+2. hacer los botones de acpetar y denegar camion(proyecto final).
+3. hacer el boton de requisitos(proyecto final).
+4. hacer que si acepta un camion en mal estado lo reten(proyecto final), ademas de que se verifiquen los datos y que de ahi pueda determinar si acepto bien a un camion o no.
+6. que se vayan rellenando los camiones dependiendo la cantidad de cereal que tiene(si puedo lo hago). 

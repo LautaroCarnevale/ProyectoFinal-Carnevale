@@ -1,0 +1,212 @@
+[
+    {
+      "idunico": 0,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Jhon",
+        "apellido": "Martinez",
+        "dni": "43.657.332",
+        "nacionalidad": "Argentina",
+        "sexo": "M"
+      },
+      "datoscarga": {
+        "humaedad": 5,
+        "bichos": 3,
+        "insecticida": 0,
+        "impurezas": 3
+      },
+      "patente": "DEF-7567",
+      "carga": "soja",
+      "peso": 27500,
+      "marca": "scania"
+    },
+    {
+      "idunico": 1,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Juan",
+        "apellido": "González",
+        "dni": "23.584.672",
+        "nacionalidad": "Peru",
+        "sexo": "M"
+      },
+      "datoscarga": {
+        "humaedad": 12,
+        "bichos": 3,
+        "insecticida": 7,
+        "impurezas": 0
+      },
+      "patente": "HSA-8427",
+      "carga": "maiz",
+      "peso": 39300,
+      "marca": "Mercedes-Benz"
+    },
+    {
+      "idunico": 2,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Miguel",
+        "apellido": "Torres",
+        "dni": "83.321.484",
+        "nacionalidad": "Argentina",
+        "sexo": "M"
+      },
+      "datoscarga": {
+        "humaedad": 7,
+        "bichos": 12,
+        "insecticida": 8,
+        "impurezas": 11
+      },
+      "patente": "ASD-3298",
+      "carga": "sorgo",
+      "peso": 28990,
+      "marca": "Volvo"
+    },
+    {
+      "idunico": 3,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Luis",
+        "apellido": "Hernandez",
+        "dni": "22.785.652",
+        "nacionalidad": "Argentina",
+        "sexo": "M"
+      },
+      "datoscarga": {
+        "humaedad": 3,
+        "bichos": 11,
+        "insecticida": 13,
+        "impurezas": 7
+      },
+      "patente": "DGA-1778",
+      "carga": "soja",
+      "peso": 25785,
+      "marca": "Iveco"
+    },
+    {
+      "idunico": 4,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Sofia",
+        "apellido": "Martinez",
+        "dni": "32.483.874",
+        "nacionalidad": "Argentina",
+        "sexo": "F"
+      },
+      "datoscarga": {
+        "humaedad": 14,
+        "bichos": 6,
+        "insecticida": 18,
+        "impurezas": 7
+      },
+      "patente": "KSF-9032",
+      "carga": "soja",
+      "peso": 30173,
+      "marca": "scania"
+    },
+    {
+      "idunico": 5,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Maria",
+        "apellido": "Rodriguez",
+        "dni": "39.634.332",
+        "nacionalidad": "Argentina",
+        "sexo": "F"
+      },
+      "datoscarga": {
+        "humaedad": 0,
+        "bichos": 2,
+        "insecticida": 4,
+        "impurezas": 8
+      },
+      "patente": "HJE-4890",
+      "carga": "maiz",
+      "peso": 27900,
+      "marca": "Iveco"
+    },
+    {
+      "idunico": 6,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Carlos",
+        "apellido": "Ramirez",
+        "dni": "13.237.234",
+        "nacionalidad": "Argentina",
+        "sexo": "M"
+      },
+      "datoscarga": {
+        "humaedad": 12,
+        "bichos": 11,
+        "insecticida": 14,
+        "impurezas": 10
+      },
+      "patente": "JER-2783",
+      "carga": "sorgo",
+      "peso": 31360,
+      "marca": "Mercedes-Benz"
+    },
+    {
+      "idunico": 7,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Alejandro",
+        "apellido": "Lopez",
+        "dni": "43.232.742",
+        "nacionalidad": "Argentina",
+        "sexo": "M"
+      },
+      "datoscarga": {
+        "humaedad": 12,
+        "bichos": 12,
+        "insecticida": 1,
+        "impurezas": 14
+      },
+      "patente": "DHR-4626",
+      "carga": "sorgo",
+      "peso": 20360,
+      "marca": "Mercedes-Benz"
+    },
+    {
+      "idunico": 8,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Santiago",
+        "apellido": "Castro",
+        "dni": "64.732.723",
+        "nacionalidad": "Argentina",
+        "sexo": "M"
+      },
+      "datoscarga": {
+        "humaedad": 8,
+        "bichos": 12,
+        "insecticida": 17,
+        "impurezas": 15
+      },
+      "patente": "SAH-6323",
+      "carga": "maiz",
+      "peso": 25660,
+      "marca": "Iveco"
+    },
+    {
+      "idunico": 9,
+      "fecha": "22/05/2023",
+      "identificacion": {
+        "nombre": "Valentina",
+        "apellido": "Martinez",
+        "dni": "76.352.733",
+        "nacionalidad": "Argentina",
+        "sexo": "F"
+      },
+      "datoscarga": {
+        "humaedad": 15,
+        "bichos": 7,
+        "insecticida": 5,
+        "impurezas": 16
+      },
+      "patente": "GWH-5257",
+      "carga": "soja",
+      "peso": 27790,
+      "marca": "Iveco"
+    }
+  ]

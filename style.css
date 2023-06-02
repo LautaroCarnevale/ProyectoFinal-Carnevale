@@ -3,11 +3,11 @@ body {
 
 }
 
-.tituloPuerto{
+.tituloPuerto {
     position: relative;
     display: flex;
     justify-content: center;
-    top: 40px;    
+    top: 40px;
 }
 
 .h1-titulo {
@@ -28,16 +28,17 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border-radius: 5px;
 }
 
-.titulo-Requisitos{
+.titulo-Requisitos {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
 }
 
-.h2-nombrePuerto{
+.h2-nombrePuerto {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     height: 25px;
@@ -45,13 +46,13 @@ body {
     padding: 0;
 }
 
-.camionesEnEspera{
+.camionesEnEspera {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.esperaBotonesYSilos{
+.esperaBotonesYSilos {
     width: 50%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -59,20 +60,20 @@ body {
     grid-auto-rows: minmax(auto, auto);
 }
 
-.grid1{
+.grid1 {
     grid-column: 1/4;
 }
 
 .grid5 {
-   grid-column: 1/4;
+    grid-column: 1/4;
 }
 
 
-.labelCamionesEspera{
+.labelCamionesEspera {
     height: 100px;
 }
 
-.divBoton-verificar{
+.divBoton-verificar {
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
@@ -80,7 +81,7 @@ body {
     flex-direction: column;
 }
 
-.divBoton-eliminar{
+.divBoton-eliminar {
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
@@ -88,7 +89,7 @@ body {
     flex-direction: column;
 }
 
-.divBoton-undefined{
+.divBoton-undefined {
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
@@ -96,7 +97,7 @@ body {
     flex-direction: column;
 }
 
-.labelSilos{
+.labelSilos {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +108,7 @@ body {
 
 
 
-.consola-verificar{
+.consola-verificar {
     width: 100%;
     height: min-content;
     border-style: solid;
@@ -116,7 +117,7 @@ body {
     margin-top: 10px;
 }
 
-.consola-eliminar{
+.consola-eliminar {
     width: 100%;
     height: min-content;
     border-style: solid;
@@ -125,7 +126,7 @@ body {
     margin-top: 10px;
 }
 
-.consola-undefined{
+.consola-undefined {
     width: 100%;
     height: min-content;
     border-style: solid;
@@ -134,7 +135,7 @@ body {
     margin-top: 10px;
 }
 
-.tituloSilos{   
+.tituloSilos {
     width: 200px;
     border-style: solid;
     border-color: 1px #000;
@@ -143,14 +144,33 @@ body {
     padding: 0;
 }
 
-.silos{
+.silos {
     display: flex;
     justify-content: center;
 }
 
-.textoSilos{
+.silos-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div-texto-silos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.textoSilos {
     text-align: center;
     font-size: 20px;
+}
+
+.p-silo {
+    font-size: 17px;
+    font-weight: 500;
 }
 
 
@@ -165,7 +185,7 @@ body {
     
 } */
 
-.registroCamiones{
+.registroCamiones {
     width: 50%;
     display: flex;
     justify-content: flex-start;
@@ -181,26 +201,49 @@ body {
     text-align: center;
     color: #000;
     text-shadow: 1px 1px 1px #ccc;
-  }
+}
 
-.cuadradoDatosRegistro{
+.cuadradoDatosRegistro {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
-    width: 400px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
     height: max-content;
     border-radius: 5px;
 }
 
+.p-datosDeResistros {
+    margin: 0;
+    padding: 0;
+    width: 51%;
+    font-family: 'Roboto', sans-serif;
+    z-index: 1;
+}
 
-.botonesCalificadores{
+.div-requisitos {
+    z-index: 0;
+    position: relative;
+    right: 49%;
+    width: 49%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+.botonesCalificadores {
     display: flex;
     justify-content: flex-end;
 }
 
 /* p de html */
-.p-datosDeResistros{
-margin: 0;
-padding: 0;
-}
+
 
 .datos-de-registro {
     background-color: #f7f7f7;
@@ -209,36 +252,89 @@ padding: 0;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     font-family: 'Roboto', sans-serif;
     padding: 20px;
-  }
-  
-  .datos-de-registro p {
+}
+
+.datos-de-registro p {
     margin: 5px;
     font-weight: bold;
-  }
-  
-  .datos-de-registro hr {
+}
+
+.datos-de-registro hr {
     margin: 0;
     border-top: 1px solid #000;
-  }
-  
-  /* Estilos para los nombres de los campos */
-  .datos-de-registro-nombre {
+}
+
+/* Estilos para los nombres de los campos */
+.datos-de-registro-nombre {
     color: #999;
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-  }
-  
-  /* Estilos para los valores de los campos */
-  .datos-de-registro-valor {
+}
+
+/* Estilos para los valores de los campos */
+.datos-de-registro-valor {
     color: #000;
     font-family: 'Roboto Mono', monospace;
     font-size: 14px;
-  }
+}
+
+
+.slide-right {
+    animation: slide-right 0.5s linear both
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(0px)
+    }
+
+    100% {
+        transform: translateX(102%)
+    }
+}
 
 
 
 
+.slide-left {
+    animation: slide-left 0.6s linear both
+}
 
+@keyframes slide-left {
+    0% {
+        transform: translateX(0%)
+    }
 
+    100% {
+        transform: translateX(0)
+    }
+}
 
+.slide-left2 {
+    animation: slide-left2 0.5s linear both
+}
+
+@keyframes slide-left2 {
+    0% {
+        transform: translateX(100%)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+.slide-right2 {
+    animation: slide-right2 0.6s linear both
+}
+
+@keyframes slide-right2 {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(0%)
+    }
+}
