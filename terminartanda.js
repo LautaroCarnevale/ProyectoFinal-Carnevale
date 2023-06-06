@@ -5,17 +5,21 @@ const bodyID = document.getElementById('body2id');
 
 
 
+
+
 function crearResumen() {
 let main = document.getElementById('main');
-let nuevoDiv = document.createElement("div");
-nuevoDiv.className = "body3-resumenTanda";
-nuevoDiv.textContent = "test";
-main.appendChild(nuevoDiv);
+let terminarTanda = document.getElementById('terminarTanda');
+
+terminarTanda.style.display = "block";
+
 }
 
 function eliminarParrafo() {
       let eliminar = document.getElementById("body2id");
       eliminar.parentNode.removeChild(eliminar);
+      let tituloBienvenida = document.getElementById('titulo-bienvenida');
+      tituloBienvenida.parentNode.removeChild(tituloBienvenida)
   }
 
 
