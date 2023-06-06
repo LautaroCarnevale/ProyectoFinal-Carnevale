@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
-  <title>PreEntrega3+Carnevale</title>
+  <title>ProyectoFinal+Carnevale</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -20,13 +21,13 @@
 <body>
   <header>
     <div class="tituloPuerto">
-      <h1 class="h1-titulo">Bienvenidos al puerto!!</h1>
+      <h1 class="h1-titulo">¡Bienvenidos al puerto!</h1>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-    <div class="body2">
+    <div class="body2" id="body2id">
       <div class="titulo-Requisitos">
         <h2 class="h2-nombrePuerto">
           CoderDock - Centro de control de acceso y supervisión de carga:
@@ -37,7 +38,7 @@
       <div class="mb-3 camionesEnEspera">
         <div class="esperaBotonesYSilos">
           <div class="labelCamionesEspera grid1">
-            <label for="camionesEspera" class="form-label">Camiones en espera</label>
+            <label for="camionesEspera" class="form-label">Tanda de camiones en espera</label>
             <select class="form-control" id="camionesEspera"></select>
           </div>
           <div class="divBoton-verificar grid2">
@@ -64,7 +65,7 @@
                 style="width: 90px;" alt="silo1"> <!-- agregar las imagenes en un div como backgraund-img -->
               <div class="div-texto-silos">
                 <h4 class="textoSilos">Silo I(soja)</h4>
-                <p class="p-siloSoja"><span id="cargaSiloSoja">0</span>/90000kg</p>
+                <p class="p-siloSoja span-silos"><span id="cargaSiloSoja">0</span>/90000kg</p>
               </div>
             </div>
           </div>
@@ -75,7 +76,7 @@
                 style="width: 90px;" alt="silo2"> <!-- agregar las imagenes en un div como backgraund-img -->
               <div class="div-texto-silos">
                 <h5 class="textoSilos">Silo II(maiz)</h6>
-                  <p class="p-siloMaiz"><span id="cargaSiloMaiz">0</span>/90000kg</p>
+                  <p class="p-siloMaiz span-silos"><span id="cargaSiloMaiz">0</span>/90000kg</p>
               </div>
 
             </div>
@@ -87,7 +88,7 @@
                 style="width: 90px;" alt="silo3"> <!-- agregar las imagenes en un div como backgraund-img -->
               <div class="div-texto-silos">
                 <h6 class="textoSilos">Silo III(sorgo) </h6>
-                <p class="p-siloSorgo"><span id="cargaSiloSorgo">0</span>/90000kg</p>
+                <p class="p-siloSorgo span-silos"><span id="cargaSiloSorgo">0</span>/90000kg</p>
               </div>
             </div>
           </div>
@@ -95,36 +96,54 @@
         </div>
         <div class="registroCamiones">
 
-          <label for="datosDeRegistro" class="titulo-RegistroDeCamiones">Datos de registro del camion:</label>
+          <label for="datosDeRegistro" class="titulo-RegistroDeCamiones">Datos de registro & requisitos del
+            camion:</label>
           <div class="cuadradoDatosRegistro" id="agregarRequisito">
             <p class="p-datosDeResistros" id="datosDeRegistro"></p>
             <div class="div-requisitos" id="divRequisitosID">
-              <p class="p-requisitos">hola</p>
+              <p class="p-requisitos">
+                <hr class="hr-requisitos">
+              <h6 class="titilo-h6-requisitos">Requisitos de carga:</h6>
+              <p class="p-requisitos2">- El peso neto de la carga de cereal no debe superar los 30,000 kg.<br>
+                - La humedad de la carga no debe exceder el 16%.<br>
+                - El porcentaje de bichos en la carga debe ser inferior al 16%.<br>
+                - El contenido de insecticida en la carga debe ser igual o menor a 16%.<br>
+                - El porcentaje de impurezas en la carga debe ser inferior al 16%.</p>
+              <hr class="hr-requisitos">
+              <h6 class="titilo-h6-requisitos">Requisitos del camión:</h6>
+              <p class="p-requisitos2">- El camión debe tener una marca y modelo específico (por ejemplo, Scania).<br>
+                - La patente del camión debe cumplir con cierto formato (por ejemplo, AAA-1234).<br>
+                - El camión debe estar en condiciones técnicas adecuadas, incluyendo frenos, luces, neumáticos, etc.</p>
+              <hr class="hr-requisitos">
+              <h6 class="titilo-h6-requisitos">Requisitos del chofer:</h6>
+              <p class="p-requisitos2">- El chofer debe proporcionar su nombre, apellido, DNI y nacionalidad(solo de
+                Argentina).<br>
+                - El chofer debe tener licencia de conducir válida y en vigencia para vehículos de carga.<br>
+                - El chofer debe tener conocimientos y experiencia adecuados para operar y manejar camiones de carga.
+              </p>
+              </p>
+              <hr>
             </div>
           </div>
         </div>
       </div>
       <div class="botonesCalificadores">
         <div class="botonesCalificadores-hijo">
-          <button type="button" class="btn btn-danger">Proximamente(Denegar)</button>
-          <button type="button" class="btn btn-success">Proximamente(Aceptar)</button>
+          <button type="button" class="btn btn-success" id="botonTerminarTanda">Terminar tanda</button>
         </div>
       </div>
     </div>
   </main>
 
-  <footer>
-
-  </footer>
 
   <!-- Bootstrap -->
   <script src="puerto.js"></script>
   <script src="main.js"></script>
   <script src="silos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
+  <script src="terminartanda.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
-
 </html>

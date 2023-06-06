@@ -1,16 +1,17 @@
 // alert('Hola, lo que encontrarás aquí es una simulación de un control de acceso en un puerto. Tu tarea consistirá en verificar los camiones, eliminando aquellos que no cumplan con los requisitos establecidos (que se detallarán en el proyecto final como un boton). También tendrás la opción de autorizar su descarga en caso de ser necesario, recuerda que los silos tienen un limite')
 // function alerRol() {
 //     swal({
-//         title: 'Se ha detectado la presencia de camiones adicionales esperando en nuestra área de acceso. Por favor, ve y ayúdalos a obtener acceso.',
+//         title: 'Se ha detectado la presencia una tanda de camiones adicionales esperando en nuestra área de acceso. Por favor, ve y ayúdalos a obtener acceso, al terminar, toca el boton de terminar tanda y veras un resumen de tu trabajo',
 //         icon: 'warning',    
 //     });
 // }
 // alerRol();
 let camiones = [];
 let requisitos = false;
+
 //genera un numero aleotrio entre el 0 y el 18(en el codigo y contexto si la humedad supera 15% no puede igresar )
 function generarNumero() {
-  return Math.floor(Math.random() * 19); // Math.random() genera un número aleatorio entre 0 y 1 (exclusivo de 1), multiplicado por 19 genera un número entre 0 y 18.99, y Math.floor() redondea hacia abajo para obtener un número entero.
+  return Math.floor(Math.random() * 19); 
 }
 
 const selectorCamiones = document.querySelector('#camionesEspera')
@@ -167,7 +168,6 @@ const botonEliminar = document.getElementById('boton-eliminar');
 botonEliminar.addEventListener('click', () => {
   deleteItemlocal();
   removeDropDown();
-  console.log(camiones)
   const consolaEliminar = document.getElementById('consola-eliminar');
   consolaEliminar.innerHTML = '✅| Se eliminó correctamente el camión de la lista de espera.';
   setTimeout(function () {
@@ -179,15 +179,11 @@ botonEliminar.addEventListener('click', () => {
 
 
 
-
-
-
 const botonRequisitos = document.getElementById('boton-Requisitos')
 const agregarRequsito = document.getElementById('agregarRequisito')
 const datosDeRegistro = document.getElementById('datosDeRegistro')
 
-
-function asd() {
+function animacionRequisitos() {
   const divRequisitosID = document.getElementById('divRequisitosID');
   const datosDeRegistro = document.getElementById('datosDeRegistro');
   
@@ -212,7 +208,7 @@ function asd() {
 
 
 botonRequisitos.addEventListener('click', () => {
-asd();
+animacionRequisitos();
 })
 
 

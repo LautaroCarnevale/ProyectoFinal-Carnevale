@@ -21,10 +21,8 @@ function elimiarDatosDelPeso() {
 
 //obtiene los datos del select le saca el peso verifica que no supere al silo y lo muestra
 function agregarDatosASilos() {
-    let miSelect = document.getElementById("camionesEspera");
-    let valorSeleccionado = parseInt(miSelect.value);
-    const verficarDatosCamion = camiones[valorSeleccionado];
-
+    const indiceSeleccionado = selectorCamiones.selectedIndex;
+    const verficarDatosCamion = camiones[indiceSeleccionado];
     if (verficarDatosCamion.carga == 'soja') {
         const limiteRestante = 90000 - sumaSoja;
         if (verficarDatosCamion.peso <= limiteRestante) {
@@ -74,6 +72,7 @@ function agregarDatosASilos() {
             todoOk = false;
         }
     } else {
+        alert('algo anda mal')
         todoOk = false;
     }
 }
