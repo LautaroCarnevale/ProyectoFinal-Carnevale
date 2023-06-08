@@ -11,7 +11,7 @@ let requisitos = false;
 
 //genera un numero aleotrio entre el 0 y el 18(en el codigo y contexto si la humedad supera 15% no puede igresar )
 function generarNumero() {
-  return Math.floor(Math.random() * 19); 
+  return Math.floor(Math.random() * 19);
 }
 
 const selectorCamiones = document.querySelector('#camionesEspera')
@@ -83,15 +83,19 @@ function mostrarDatosDeCamion() {
 //boton de verificar
 const botonVerificar = document.getElementById('boton-verificar')
 
+
 // escucha los click del boton verificar y si le da click verifica que los camiones sean correctos.
 botonVerificar.addEventListener('click', () => {
-  const numerDeCamion = selectorCamiones.value;
-  const verficarDatosCamion = camiones[numerDeCamion];
+
+
+  const indiceSeleccionado = selectorCamiones.selectedIndex;
+  const verficarDatosCamion = camiones[indiceSeleccionado];
+
+
 
   const consolaVerificar = document.getElementById('consola-verificar')
   let verificarDatosDeConsola = true;
   let mensajesDeError = [];
-
   function verificarNacionalidad() {
     if (verficarDatosCamion.identificacion.nacionalidad !== 'Argentina') {
       mensajesDeError.push(`❌ | Parece que hay un problema con la nacionalidad de la persona en cuestión. De acuerdo con los datos proporcionados, no es de Argentina, sino de ${verficarDatosCamion.identificacion.nacionalidad}. En este caso, lo más recomendable sería rechazarle la entrada.`);
@@ -142,16 +146,34 @@ botonVerificar.addEventListener('click', () => {
     setTimeout(function () {
       consolaVerificar.innerHTML = "";
     }, 2000);
+
   } else {
     consolaVerificar.innerHTML = mensajesDeError.join(`<br>`);
   }
+
+  if (verficarDatosCamion.verificado === false) {
+
+    logsVerificados.push(logsVerificados.length);
+    verficarDatosCamion.verificado = true;
+  }
+
+
+
 });
 
 
 function deleteItemlocal() {
   let miSelect = document.getElementById("camionesEspera");
   let valorSeleccionado = parseInt(miSelect.value);
-  camiones = camiones.filter((camion) => camion.idunico !== valorSeleccionado);
+
+  camiones = camiones.filter((camion) => {
+    if (camion.idunico === valorSeleccionado && camion.eliminado === false) {
+      logsEliminados.push(logsEliminados.length);
+      camion.eliminado = true;
+    }
+    return camion.idunico !== valorSeleccionado;
+  });
+
 }
 
 
@@ -186,29 +208,29 @@ const datosDeRegistro = document.getElementById('datosDeRegistro')
 function animacionRequisitos() {
   const divRequisitosID = document.getElementById('divRequisitosID');
   const datosDeRegistro = document.getElementById('datosDeRegistro');
-  
+
   if (requisitos === false) {
     divRequisitosID.classList.remove('slide-right', 'slide-left2');
     datosDeRegistro.classList.remove('slide-left', 'slide-right2');
-    
+
     divRequisitosID.classList.add('slide-right');
     datosDeRegistro.classList.add('slide-left');
-    
+
     requisitos = true;
   } else if (requisitos === true) {
     divRequisitosID.classList.remove('slide-right', 'slide-left2');
     datosDeRegistro.classList.remove('slide-left', 'slide-right2');
-    
+
     divRequisitosID.classList.add('slide-left2');
     datosDeRegistro.classList.add('slide-right2');
-    
+
     requisitos = false;
   }
 }
 
 
 botonRequisitos.addEventListener('click', () => {
-animacionRequisitos();
+  animacionRequisitos();
 })
 
 

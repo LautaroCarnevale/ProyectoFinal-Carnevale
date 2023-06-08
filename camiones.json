@@ -18,7 +18,9 @@
       "patente": "DEF-7567",
       "carga": "soja",
       "peso": 27500,
-      "marca": "scania"
+      "marca": "scania",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 1,
@@ -39,7 +41,9 @@
       "patente": "HSA-8427",
       "carga": "maiz",
       "peso": 39300,
-      "marca": "Mercedes-Benz"
+      "marca": "Mercedes-Benz",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 2,
@@ -60,7 +64,9 @@
       "patente": "ASD-3298",
       "carga": "sorgo",
       "peso": 28990,
-      "marca": "Volvo"
+      "marca": "Volvo",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 3,
@@ -81,7 +87,9 @@
       "patente": "DGA-1778",
       "carga": "soja",
       "peso": 25785,
-      "marca": "Iveco"
+      "marca": "Iveco",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 4,
@@ -102,7 +110,9 @@
       "patente": "KSF-9032",
       "carga": "soja",
       "peso": 30173,
-      "marca": "scania"
+      "marca": "scania",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 5,
@@ -123,7 +133,9 @@
       "patente": "HJE-4890",
       "carga": "maiz",
       "peso": 27900,
-      "marca": "Iveco"
+      "marca": "Iveco",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 6,
@@ -144,7 +156,9 @@
       "patente": "JER-2783",
       "carga": "sorgo",
       "peso": 31360,
-      "marca": "Mercedes-Benz"
+      "marca": "Mercedes-Benz",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 7,
@@ -165,7 +179,9 @@
       "patente": "DHR-4626",
       "carga": "sorgo",
       "peso": 20360,
-      "marca": "Mercedes-Benz"
+      "marca": "Mercedes-Benz",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 8,
@@ -186,7 +202,9 @@
       "patente": "SAH-6323",
       "carga": "maiz",
       "peso": 25660,
-      "marca": "Iveco"
+      "marca": "Iveco",
+      "verificado": false,
+      "eliminado": false
     },
     {
       "idunico": 9,
@@ -207,6 +225,8 @@
       "patente": "GWH-5257",
       "carga": "soja",
       "peso": 27790,
-      "marca": "Iveco"
+      "marca": "Iveco",
+      "verificado": false,
+      "eliminado": false
     }
   ]
