@@ -35,6 +35,11 @@ function agregarDatosASilos() {
 
             cargaSiloSoja.innerHTML = sumaSoja;
             elimiarDatosDelPeso();
+            if (verficarDatosCamion.descargado === false) {
+
+                logsDescargados.push(logsDescargados.length);
+                verficarDatosCamion.descargado = true;
+            }
             todoOk = true;
         } else {
             todoOk = false;
@@ -51,6 +56,11 @@ function agregarDatosASilos() {
 
             cargaSiloMaiz.innerHTML = sumaMaiz;
             elimiarDatosDelPeso();
+            if (verficarDatosCamion.descargado === false) {
+
+                logsDescargados.push(logsDescargados.length);
+                verficarDatosCamion.descargado = true;
+            }
             todoOk = true;
         } else {
             todoOk = false;
@@ -67,6 +77,11 @@ function agregarDatosASilos() {
 
             cargaSiloSorgo.innerHTML = sumaSorgo;
             elimiarDatosDelPeso();
+            if (verficarDatosCamion.descargado === false) {
+
+                logsDescargados.push(logsDescargados.length);
+                verficarDatosCamion.descargado = true;
+            }
             todoOk = true;
         } else {
             todoOk = false;

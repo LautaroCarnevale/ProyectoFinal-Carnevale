@@ -20,7 +20,8 @@
       "peso": 27500,
       "marca": "scania",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 1,
@@ -43,7 +44,8 @@
       "peso": 39300,
       "marca": "Mercedes-Benz",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 2,
@@ -66,7 +68,8 @@
       "peso": 28990,
       "marca": "Volvo",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 3,
@@ -89,7 +92,8 @@
       "peso": 25785,
       "marca": "Iveco",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 4,
@@ -112,7 +116,8 @@
       "peso": 30173,
       "marca": "scania",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 5,
@@ -135,7 +140,8 @@
       "peso": 27900,
       "marca": "Iveco",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 6,
@@ -158,7 +164,8 @@
       "peso": 31360,
       "marca": "Mercedes-Benz",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 7,
@@ -181,7 +188,8 @@
       "peso": 20360,
       "marca": "Mercedes-Benz",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 8,
@@ -204,7 +212,8 @@
       "peso": 25660,
       "marca": "Iveco",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     },
     {
       "idunico": 9,
@@ -227,6 +236,7 @@
       "peso": 27790,
       "marca": "Iveco",
       "verificado": false,
-      "eliminado": false
+      "eliminado": false,
+      "descargado": false
     }
   ]
