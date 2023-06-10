@@ -99,6 +99,7 @@ botonVerificar.addEventListener('click', () => {
   function verificarNacionalidad() {
     if (verficarDatosCamion.identificacion.nacionalidad !== 'Argentina') {
       mensajesDeError.push(`❌ | Parece que hay un problema con la nacionalidad de la persona en cuestión. De acuerdo con los datos proporcionados, no es de Argentina, sino de ${verficarDatosCamion.identificacion.nacionalidad}. En este caso, lo más recomendable sería rechazarle la entrada.`);
+
       verificarDatosDeConsola = false;
     }
   }
@@ -130,6 +131,7 @@ botonVerificar.addEventListener('click', () => {
   function verificarPeso() {
     if (verficarDatosCamion.peso > 30000) {
       mensajesDeError.push(`❌ | Parece que hay un problema con el peso del camión. Según los datos proporcionados, el vehículo ha superado el límite de 30000 kg y tiene un peso de ${verficarDatosCamion.peso} kg. En este caso, lo más recomendable sería rechazar la entrada del camión.`);
+      
       verificarDatosDeConsola = false;
     }
   }

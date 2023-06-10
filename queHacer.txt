@@ -1,13 +1,7 @@
-1. hacer los botones de acpetar y denegar camion(proyecto final).
-2. hacer que si acepta un camion en mal estado lo reten(proyecto final), ademas de que se verifiquen los datos y que de ahi pueda determinar si acepto bien a un camion o no.
 
-Resumen terminar tanda, como hacerlo:
-- hacer en la funcion que ya cree que verifique si el log de verificado o lo que sea es false, y si es false que agrege a un array un 1 y que despues que sea true y si es true que no deje agregar otro numero
-- Hacer que los errores de cada camion se publiquen un array, y despues que se array se mustre en el resumen.
+1. hacer que si acepta un camion en mal estado lo reten(proyecto final), ademas de que se verifiquen los datos y que de ahi pueda determinar si acepto bien a un camion o no.
 
-- terminar de hacer los logs de eliminar camion y descargar camion
 
-- 1 paso: hacer un array de onjetos que contenga un id unico y el error en texto.
-  2 paso: hacer un generador de idunico en orden osea 0,1,2,3 y que genere apartir que de caves que es llamada la funcion un id nuevo
-  3 paso: hacer los erores y que se publiquen dentro del array + con el generador de idunico en orden creado anterirmente
-  4 paso: mostrar esos errores en en "terminar tanda" creando para cada error un formato en html y sus calses. 
+diferntes tipos de errores que tengo que crear
+- 
+
