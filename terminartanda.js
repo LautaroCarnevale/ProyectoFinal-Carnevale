@@ -70,23 +70,33 @@ function crearErrores() {
 
         divErrors.appendChild(div);
 
-        
+
     }
 }
 
 
 
 
+function test() {
+
+
+    let miSelect = document.getElementById("camionesEspera");
+    let valorSeleccionado = parseInt(miSelect.value);
+    const indiceSeleccionado = selectorCamiones.selectedIndex;
+    const verficarDatosCamion = camiones[indiceSeleccionado];
+
+    let filtercamiones = camiones.filter((el) => el.estado == false)
+    const asd2 = filtercamiones.map((el) => el.idunico)
+    if (filtercamiones.length >= 1) {
+        agregarError("3", `error: El/los camiones con el/los ID únicos ${asd2}, que habían sido verificados, no fueron eliminados del registro a pesar de encontrarse en mal estado.`);
+    } 
+}
 
 botonTerminar.addEventListener('click', () => {
-
-    let restoVerificadoYcamiones = selectorCamiones.length - logsVerificados.length;
+    test();
+    let restoVerificadoYcamiones = 10 - logsVerificados.length;
     if (restoVerificadoYcamiones !== 0) {
         agregarError("1", `error: se detecto que no verificaste ${restoVerificadoYcamiones} camiones`);
-    } else if (s) {
-        
-    } else {
-        alert('asd')
     }
     eliminarParrafo();
     crearResumen();

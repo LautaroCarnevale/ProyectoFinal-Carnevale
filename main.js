@@ -96,43 +96,48 @@ botonVerificar.addEventListener('click', () => {
   const consolaVerificar = document.getElementById('consola-verificar')
   let verificarDatosDeConsola = true;
   let mensajesDeError = [];
+
   function verificarNacionalidad() {
     if (verficarDatosCamion.identificacion.nacionalidad !== 'Argentina') {
       mensajesDeError.push(`❌ | Parece que hay un problema con la nacionalidad de la persona en cuestión. De acuerdo con los datos proporcionados, no es de Argentina, sino de ${verficarDatosCamion.identificacion.nacionalidad}. En este caso, lo más recomendable sería rechazarle la entrada.`);
-
       verificarDatosDeConsola = false;
+      verficarDatosCamion.estado = false;
     }
   }
+
   function verificarHumedad() {
     if (verficarDatosCamion.datoscarga.humaedad > 16) {
       mensajesDeError.push(`❌ | Parece que hay un problema con la humedad del la carga, supera el 16%, lo cual no se permite como dicen los requisitos.`);
       verificarDatosDeConsola = false;
+      verficarDatosCamion.estado = false;
     }
   }
   function verificarBichos() {
     if (verficarDatosCamion.datoscarga.bichos > 16) {
       mensajesDeError.push(`❌ | Parece que hay un problema con la cantidad de bichos del la carga, supera el 16%, lo cual no se permite como dicen los requisitos.`);
       verificarDatosDeConsola = false;
+      verficarDatosCamion.estado = false;
     }
   }
   function verificarInsecticida() {
     if (verficarDatosCamion.datoscarga.insecticida > 16) {
       mensajesDeError.push(`❌ | Parece que hay un problema con la cantidad de insecticida del la carga, supera el 16%, lo cual no se permite como dicen los requisitos.`);
       verificarDatosDeConsola = false;
+      verficarDatosCamion.estado = false;
     }
   }
   function verificarImpurezas() {
     if (verficarDatosCamion.datoscarga.impurezas > 16) {
       mensajesDeError.push(`❌ | Parece que hay un problema con la cantidad de impurezas que hay en la carga, supera el 16%, lo cual no se permite como dicen los requisitos.`);
       verificarDatosDeConsola = false;
+      verficarDatosCamion.estado = false;
     }
   }
-
   function verificarPeso() {
     if (verficarDatosCamion.peso > 30000) {
       mensajesDeError.push(`❌ | Parece que hay un problema con el peso del camión. Según los datos proporcionados, el vehículo ha superado el límite de 30000 kg y tiene un peso de ${verficarDatosCamion.peso} kg. En este caso, lo más recomendable sería rechazar la entrada del camión.`);
-      
       verificarDatosDeConsola = false;
+      verficarDatosCamion.estado = false;
     }
   }
 
@@ -153,6 +158,7 @@ botonVerificar.addEventListener('click', () => {
     consolaVerificar.innerHTML = mensajesDeError.join(`<br>`);
   }
 
+
   if (verficarDatosCamion.verificado === false) {
 
     logsVerificados.push(logsVerificados.length);
@@ -161,10 +167,12 @@ botonVerificar.addEventListener('click', () => {
 
 
 
+
 });
 
 
 function deleteItemlocal() {
+
   let miSelect = document.getElementById("camionesEspera");
   let valorSeleccionado = parseInt(miSelect.value);
 
@@ -175,8 +183,20 @@ function deleteItemlocal() {
     }
     return camion.idunico !== valorSeleccionado;
   });
-
 }
+
+
+function logsErrorEliminacion() {
+  let miSelect = document.getElementById("camionesEspera");
+  let valorSeleccionado = parseInt(miSelect.value);
+  const indiceSeleccionado = selectorCamiones.selectedIndex;
+  const verficarDatosCamion = camiones[indiceSeleccionado];
+  if (verficarDatosCamion.estado == true) {
+    agregarError("0", `Se detectó que eliminaste el camión con el identificador único ${valorSeleccionado}, el cual se encontraba en óptimas condiciones.`);
+  }
+}
+
+
 
 
 
@@ -190,14 +210,14 @@ function removeDropDown() {
 const botonEliminar = document.getElementById('boton-eliminar');
 
 botonEliminar.addEventListener('click', () => {
-  deleteItemlocal();
-  removeDropDown();
+  logsErrorEliminacion();
   const consolaEliminar = document.getElementById('consola-eliminar');
   consolaEliminar.innerHTML = '✅| Se eliminó correctamente el camión de la lista de espera.';
   setTimeout(function () {
     consolaEliminar.innerHTML = "";
   }, 3500);
-
+  deleteItemlocal();
+  removeDropDown();
 });
 
 

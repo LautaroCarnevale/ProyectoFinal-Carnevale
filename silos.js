@@ -109,10 +109,21 @@ function mostrarConsolaDescargar() {
 
 }
 
+function logsErrorDescarga() {
+    let miSelect = document.getElementById("camionesEspera");
+    let valorSeleccionado = parseInt(miSelect.value);
+    const indiceSeleccionado = selectorCamiones.selectedIndex;
+    const verficarDatosCamion = camiones[indiceSeleccionado];
+    if (verficarDatosCamion.estado == false) {
+      agregarError("0", `Se detectó que descargaste el camión con el identificador único ${valorSeleccionado}, el cual se encontraba en malas condiciones para ser descargado.`);
+    }
+  }
+
 //llamar al boton
 const botonDescargar = document.getElementById('boton-descargar')
 botonDescargar.addEventListener('click', () => {
     agregarDatosASilos();
     mostrarConsolaDescargar();
+    logsErrorDescarga(); 
 });
 
