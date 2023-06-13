@@ -1,11 +1,11 @@
-alert('¡Hola! Bienvenido a la simulación del Centro de Control y Supervisión de Carga en un puerto de cereales (maíz, soja, etc.). Tu tarea consiste en verificar cada camión y eliminar aquellos que se encuentren en mal estado, así como descargar aquellos que estén en buen estado. Una vez que hayas completado tu tarea, haz clic en el botón "Terminar Tanda" para obtener información sobre los posibles errores cometidos durante el proceso. ¡Disfruta de la simulación y buena suerte en tu tarea!')
-function alerRol() {
-    swal({
-        title: 'Se ha detectado la presencia de una tanda de camiones adicionales esperando en nuestra área de acceso. Por favor, ve y ayúdalos a obtener acceso, al terminar, toca el boton de terminar tanda y veras un resumen de tu trabajo.',
-        icon: 'warning',    
-    });
-}
-alerRol();
+// alert('¡Hola! Bienvenido a la simulación del Centro de Control y Supervisión de Carga en un puerto de cereales (maíz, soja, etc.). Tu tarea consiste en verificar cada camión y eliminar aquellos que se encuentren en mal estado, así como descargar aquellos que estén en buen estado. Una vez que hayas completado tu tarea, haz clic en el botón "Terminar Tanda" para obtener información sobre los posibles errores cometidos durante el proceso. ¡Disfruta de la simulación y buena suerte en tu tarea!')
+// function alerRol() {
+//     swal({
+//         title: 'Se ha detectado la presencia de una tanda de camiones adicionales esperando en nuestra área de acceso. Por favor, ve y ayúdalos a obtener acceso, al terminar, toca el boton de terminar tanda y veras un resumen de tu trabajo.',
+//         icon: 'warning',    
+//     });
+// }
+// alerRol();
 let camiones = [];
 let requisitos = false;
 

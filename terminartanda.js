@@ -77,14 +77,9 @@ function crearErrores() {
 
 
 
-function test() {
-
-
-    let miSelect = document.getElementById("camionesEspera");
-    let valorSeleccionado = parseInt(miSelect.value);
+function losgErrorEliminadoMalEstado() {
     const indiceSeleccionado = selectorCamiones.selectedIndex;
     const verficarDatosCamion = camiones[indiceSeleccionado];
-
     let filtercamiones = camiones.filter((el) => el.estado == false)
     const asd2 = filtercamiones.map((el) => el.idunico)
     if (filtercamiones.length >= 1) {
@@ -93,18 +88,19 @@ function test() {
 }
 
 function logsErrorDeNoDescarga() {
-    let miSelect = document.getElementById("camionesEspera");
-    let valorSeleccionado = parseInt(miSelect.value);
     const indiceSeleccionado = selectorCamiones.selectedIndex;
     const verficarDatosCamion = camiones[indiceSeleccionado];
-    if (verficarDatosCamion.descargado == false && verficarDatosCamion.estado == true) {
-        agregarError("3", `Se detectó que no descargaste el camión con el identificador único ${valorSeleccionado}, el cual se encontraba en buenas condiciones para ser descargado.`);
+    let filtercamiones2 = camiones.filter((el) => el.descargado == false  && el.estado == true)
+    const noDescarga = filtercamiones2.map((el) => el.idunico)
+
+    if (filtercamiones2.length >= 1) {
+        agregarError("4", `Se detectó que no descargaron los camiones con los identificadores únicos ${noDescarga}, los cuales se encontraban en buenas condiciones para ser descargados.`);
     }
 }
 
 botonTerminar.addEventListener('click', () => {
-    test();
     logsErrorDeNoDescarga();
+    losgErrorEliminadoMalEstado();
     let restoVerificadoYcamiones = 10 - logsVerificados.length;
     if (restoVerificadoYcamiones !== 0) {
         agregarError("1", `error: se detecto que no verificaste ${restoVerificadoYcamiones} camiones`);

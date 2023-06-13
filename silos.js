@@ -127,6 +127,5 @@ botonDescargar.addEventListener('click', () => {
     agregarDatosASilos();
     mostrarConsolaDescargar();
     logsErrorDescarga(); 
-    logsErrorDeNoDescarga();
 });
 
