@@ -1,7 +1,7 @@
 
-1. hacer que si acepta un camion en mal estado lo reten(proyecto final), ademas de que se verifiquen los datos y que de ahi pueda determinar si acepto bien a un camion o no.
-2. agregar un sistema de strikes
 
-diferntes tipos de errores que tengo que crear:
-- que detecte si no eliminaste un camion en mal estado y que de detalles de cul fue y demas.
+1. agregar un sistema de strikes usando localSotrage
+
+
+
 

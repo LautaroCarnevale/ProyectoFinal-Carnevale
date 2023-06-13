@@ -119,11 +119,14 @@ function logsErrorDescarga() {
     }
   }
 
+
+
 //llamar al boton
 const botonDescargar = document.getElementById('boton-descargar')
 botonDescargar.addEventListener('click', () => {
     agregarDatosASilos();
     mostrarConsolaDescargar();
     logsErrorDescarga(); 
+    logsErrorDeNoDescarga();
 });
 

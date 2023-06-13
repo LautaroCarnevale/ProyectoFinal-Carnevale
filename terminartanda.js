@@ -89,11 +89,22 @@ function test() {
     const asd2 = filtercamiones.map((el) => el.idunico)
     if (filtercamiones.length >= 1) {
         agregarError("3", `error: El/los camiones con el/los ID únicos ${asd2}, que habían sido verificados, no fueron eliminados del registro a pesar de encontrarse en mal estado.`);
-    } 
+    }
+}
+
+function logsErrorDeNoDescarga() {
+    let miSelect = document.getElementById("camionesEspera");
+    let valorSeleccionado = parseInt(miSelect.value);
+    const indiceSeleccionado = selectorCamiones.selectedIndex;
+    const verficarDatosCamion = camiones[indiceSeleccionado];
+    if (verficarDatosCamion.descargado == false && verficarDatosCamion.estado == true) {
+        agregarError("3", `Se detectó que no descargaste el camión con el identificador único ${valorSeleccionado}, el cual se encontraba en buenas condiciones para ser descargado.`);
+    }
 }
 
 botonTerminar.addEventListener('click', () => {
     test();
+    logsErrorDeNoDescarga();
     let restoVerificadoYcamiones = 10 - logsVerificados.length;
     if (restoVerificadoYcamiones !== 0) {
         agregarError("1", `error: se detecto que no verificaste ${restoVerificadoYcamiones} camiones`);
@@ -104,4 +115,5 @@ botonTerminar.addEventListener('click', () => {
     for (let i = 0; i < errores.length; i++) {
         crearErrores();
     }
+
 })

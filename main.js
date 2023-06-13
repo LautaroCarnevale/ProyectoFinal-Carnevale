@@ -1,11 +1,11 @@
-// alert('Hola, lo que encontrarás aquí es una simulación de un control de acceso en un puerto. Tu tarea consistirá en verificar los camiones, eliminando aquellos que no cumplan con los requisitos establecidos (que se detallarán en el proyecto final como un boton). También tendrás la opción de autorizar su descarga en caso de ser necesario, recuerda que los silos tienen un limite')
-// function alerRol() {
-//     swal({
-//         title: 'Se ha detectado la presencia una tanda de camiones adicionales esperando en nuestra área de acceso. Por favor, ve y ayúdalos a obtener acceso, al terminar, toca el boton de terminar tanda y veras un resumen de tu trabajo',
-//         icon: 'warning',    
-//     });
-// }
-// alerRol();
+alert('¡Hola! Bienvenido a la simulación del Centro de Control y Supervisión de Carga en un puerto de cereales (maíz, soja, etc.). Tu tarea consiste en verificar cada camión y eliminar aquellos que se encuentren en mal estado, así como descargar aquellos que estén en buen estado. Una vez que hayas completado tu tarea, haz clic en el botón "Terminar Tanda" para obtener información sobre los posibles errores cometidos durante el proceso. ¡Disfruta de la simulación y buena suerte en tu tarea!')
+function alerRol() {
+    swal({
+        title: 'Se ha detectado la presencia de una tanda de camiones adicionales esperando en nuestra área de acceso. Por favor, ve y ayúdalos a obtener acceso, al terminar, toca el boton de terminar tanda y veras un resumen de tu trabajo.',
+        icon: 'warning',    
+    });
+}
+alerRol();
 let camiones = [];
 let requisitos = false;
 
@@ -99,7 +99,7 @@ botonVerificar.addEventListener('click', () => {
 
   function verificarNacionalidad() {
     if (verficarDatosCamion.identificacion.nacionalidad !== 'Argentina') {
-      mensajesDeError.push(`❌ | Parece que hay un problema con la nacionalidad de la persona en cuestión. De acuerdo con los datos proporcionados, no es de Argentina, sino de ${verficarDatosCamion.identificacion.nacionalidad}. En este caso, lo más recomendable sería rechazarle la entrada.`);
+      mensajesDeError.push(`❌ | Parece que hay un problema con la nacionalidad de la persona en cuestión. De acuerdo con los datos proporcionados, no es de Argentina, sino de ${verficarDatosCamion.identificacion.nacionalidad}. En este caso, lo más recomendable sería eliminar el camión.`);
       verificarDatosDeConsola = false;
       verficarDatosCamion.estado = false;
     }
@@ -135,7 +135,7 @@ botonVerificar.addEventListener('click', () => {
   }
   function verificarPeso() {
     if (verficarDatosCamion.peso > 30000) {
-      mensajesDeError.push(`❌ | Parece que hay un problema con el peso del camión. Según los datos proporcionados, el vehículo ha superado el límite de 30000 kg y tiene un peso de ${verficarDatosCamion.peso} kg. En este caso, lo más recomendable sería rechazar la entrada del camión.`);
+      mensajesDeError.push(`❌ | Parece que hay un problema con el peso del camión. Según los datos proporcionados, el vehículo ha superado el límite de 30000 kg y tiene un peso de ${verficarDatosCamion.peso} kg. En este caso, lo más recomendable sería eliminar el camión.`);
       verificarDatosDeConsola = false;
       verficarDatosCamion.estado = false;
     }
@@ -206,7 +206,6 @@ function removeDropDown() {
   selectorCamiones.options[indiceSeleccionado].remove();
 }
 
-//boton para ejecutar la eliminaciones del localSotrage y del html
 const botonEliminar = document.getElementById('boton-eliminar');
 
 botonEliminar.addEventListener('click', () => {
@@ -254,28 +253,4 @@ function animacionRequisitos() {
 botonRequisitos.addEventListener('click', () => {
   animacionRequisitos();
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
